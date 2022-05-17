@@ -1,10 +1,10 @@
 {
-  "type": "mysql",
+  "type": "postgres",
   "host": "localhost",
-  "port": 3306,
-  "username": "root",
-  "password": "",
-  "database": "itfocus_recruting_task",
+  "port": 5432,
+  "username": "postgres",
+  "password": "laski111",
+  "database": "notice_board",
   "entities": [
     "dist/**/**.entity{.ts,.js}"
   ],
