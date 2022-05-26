@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { AdService } from './ad.service';
 import { CreateAdDto } from './dto/create-ad.dto';
 
-@Controller('ad')
+@Controller('api/ad')
 export class AdController {
   constructor(private adService: AdService) {}
 
