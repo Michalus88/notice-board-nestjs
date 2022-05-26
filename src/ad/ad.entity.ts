@@ -6,6 +6,7 @@ export class Ad extends BaseEntity {
   id: string;
 
   @Column({
+    type: 'varchar',
     length: 255,
   })
   name: string;
@@ -17,6 +18,13 @@ export class Ad extends BaseEntity {
     default: 0,
   })
   price: number;
+
+  @Column({
+    type: 'varchar',
+    length: 500,
+    nullable: true,
+  })
+  description: string;
 
   @Column({
     type: 'decimal',
@@ -33,4 +41,18 @@ export class Ad extends BaseEntity {
     nullable: true,
   })
   lon: number;
+
+  @Column({
+    type: 'varchar',
+    length: 250,
+    nullable: true,
+  })
+  olxUrl: string;
+
+  @Column({
+    type: 'varchar',
+    length: 250,
+    nullable: true,
+  })
+  allegroUrl: string;
 }
