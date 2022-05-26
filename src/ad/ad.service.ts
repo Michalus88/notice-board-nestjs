@@ -30,7 +30,7 @@ export class AdService {
   }
 
   async getAll(): Promise<AdSanitize[]> {
-    return (await Ad.findOne({
+    return (await Ad.find({
       select: ['id', 'lat', 'lon'],
     })) as unknown as AdSanitize[];
   }
