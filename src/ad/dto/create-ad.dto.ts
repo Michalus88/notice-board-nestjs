@@ -13,4 +13,8 @@ export class CreateAdDto {
   lat: number;
   @IsNotEmpty()
   lon: number;
+  @MaxLength(255)
+  olxUrl: string;
+  @MaxLength(255)
+  allegroUrl: string;
 }
