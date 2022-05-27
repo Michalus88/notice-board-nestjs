@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
@@ -8,23 +9,17 @@ import { Ad } from './ad/ad.entity';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
-      // type: 'mysql',
-      // host: 'localhost',
-      // username: 'michalmk_michalmk',
-      // password: 'ACd78iAuQv',
-      // database: 'michalmk_ads-map',
-      // entities: ['dist/**/**.entity{.ts,.js}'],
-      // synchronize: true,
       type: 'mysql',
       host: 'localhost',
-      username: 'michalmk_michalmk',
-      password: 'ACd78iAuQv',
-      database: 'michalmk_ads-map',
+      username: process.env.DB_USER_NAME,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
       entities: [Ad],
       bigNumberStrings: false,
       logging: true,
-      synchronize: false,
+      synchronize: true,
     }),
     AdModule,
   ],
