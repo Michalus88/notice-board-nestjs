@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AdModule } from './ad/ad.module';
+import { Ad } from './ad/ad.entity';
 
 @Module({
   imports: [
@@ -20,7 +21,7 @@ import { AdModule } from './ad/ad.module';
       username: 'michalmk_michalmk',
       password: 'ACd78iAuQv',
       database: 'michalmk_ads-map',
-      entities: ['dist/**/**.entity{.ts,.js}'],
+      entities: [Ad],
       bigNumberStrings: false,
       logging: true,
       synchronize: false,
